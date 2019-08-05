@@ -13,4 +13,6 @@ $divider-color: #BDBDBD;
 
 body {
   font-family: 'Roboto', sans-serif;
+  overflow-x: auto !important;
+    min-width: 700px !important;
 }

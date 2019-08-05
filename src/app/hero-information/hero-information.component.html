@@ -1,13 +1,18 @@
-<div class="header">
-  <h4 class="back-to-list" routerLink="/" routerLinkActive="active">
-    <i class="fa fa-arrow-left"></i> Heroes List
-  </h4>
-</div>
-<div class="heroes-information" *ngIf="hero">
+<div class="container-fluid">
+  <div class="header">
+    <h4 class="back-to-list" routerLink="/" routerLinkActive="active">
+      <i class="fa fa-arrow-left"></i> Heroes List
+    </h4>
+  </div>
+  <div class="row heroes-information" *ngIf="hero">
+    <div class="col-md-4 col-sm-12 col-xs-12 text-md-right text-sm-center">
+      <img class="hero_img" [src]=" '../assets/images/' + hero.image " />
+    </div>
+    <div class="col-md-8 col-sm-12 col-xs-12 text-md-left text-sm-center">
+      <h2> {{hero.firstName}} {{hero.lastName}}</h2>
+      <h4> {{hero.DOB | date}}</h4>
+      <h4> {{hero.contact | number}}</h4>
+    </div>
 
-  <img class="hero_img" [src]=" '../assets/images/' + hero.image "/>
-  <h2> {{hero.firstName}} {{hero.lastName}}</h2>
-  <h4> {{hero.DOB | date}}</h4>
-  <h4> {{hero.contact | number}}</h4>
-
+  </div>
 </div>
