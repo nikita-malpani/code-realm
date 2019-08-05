@@ -1,0 +1,33 @@
+<div class="header">
+  <h4 class="back-to-list" routerLink="/" routerLinkActive="active">
+    <i class="fa fa-arrow-left"></i> Heroes List
+  </h4>
+</div>
+<form class="heroes-form" [formGroup]="heroFom" (ngSubmit)="createHero()">
+  <h1>Hero Form</h1>
+  <mat-form-field class="first-name">
+    <input matInput formControlName="firstName" placeholder="First Name">
+  </mat-form-field>
+  <div class="error" *ngIf="heroFom.controls.firstName.touched && heroFom.controls.firstName.errors?.required">First Name is required</div>
+
+  <mat-form-field class="last-name">
+    <input matInput formControlName="lastName" placeholder="Last Name">
+  </mat-form-field>
+  <div class="error" *ngIf="heroFom.controls.lastName.touched && heroFom.controls.lastName.errors?.required">Last Name is required</div>
+
+  <mat-form-field>
+    <input matInput formControlName="DOB" [matDatepicker]="picker" placeholder="Date of Birth">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <div class="error" *ngIf="heroFom.controls.DOB.touched && heroFom.controls.DOB.errors?.required">DOB is required</div>
+
+  <mat-form-field class="contact">
+    <input matInput type="number" formControlName="contact" placeholder="Contact">
+  </mat-form-field>
+  <div class="error" *ngIf="heroFom.controls.contact.touched && heroFom.controls.contact.errors?.required">Contact is required</div>
+  <div class="error" *ngIf="heroFom.controls.contact.touched && heroFom.controls.contact.errors?.pattern">Contact must be 10 digits.</div>
+
+  <button class="create-button" mat-flat-button color="primary" [disabled]="!heroFom.valid">Create a Hero</button>
+</form>
+
