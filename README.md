@@ -1,4 +1,4 @@
-# Globant - Code Realm - Angular Assignment
+# Code Realm - Angular Assignment
 
 ## The current application
 The existing app is a simple list app for which you can perform the following operations -
